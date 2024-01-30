@@ -32,7 +32,6 @@ public class UserResource {
     public ResponseEntity<Map<String,String>> email(@PathVariable Integer id) {
         return new ResponseEntity<>(Collections.singletonMap("email", userController.getUserById(id).getEmail()), HttpStatus.OK);
     }
-    //
     @PostMapping    
     public ResponseEntity<UserDto> newUser(@RequestBody User user) {
         return ResponseEntity.ok(userController.addUser(user));
